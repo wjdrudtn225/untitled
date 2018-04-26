@@ -13,5 +13,5 @@ resultrdd2 = rdd2.map(lambda x:(x.split(",")[0],x.split(",")[1:])).reduceByKey(l
 
 result = resultrdd1.join(resultrdd2)
 
-result = result.map(lambda x: (x[0], x[1][0]+c[1][1]))
+result = result.map(lambda x: (x[0], x[1][0]+x[1][1]))
 print(result.collect())
